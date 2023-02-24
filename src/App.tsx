@@ -78,7 +78,7 @@ function App() {
       this determines the result of the button for 'Start Quiz' showing. 
     */}
 
-    
+
     {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
 
     <button className='start' onClick={startTrivia}>
@@ -87,9 +87,9 @@ function App() {
     ) : null}
 
 
-    <p className='score'>Score:</p>
+    {!gameOver ? <p className='score'>Score:</p> : null}
 
-    <p>Loading Questions...</p>
+    {loading ? <p>Loading Questions...</p> : null}
 
     {/* <QuestionCard 
     
