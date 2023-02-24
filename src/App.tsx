@@ -91,7 +91,10 @@ function App() {
 
     {loading ? <p>Loading Questions...</p> : null}
 
-    {/* <QuestionCard 
+    
+    {!loading && !gameOver && (
+
+    <QuestionCard 
     
     questionNr={number + 1}
     totalQuestions={TOTAL_QUESTIONS}
@@ -99,11 +102,16 @@ function App() {
     answers={questions[number].answers}
     userAnswer={userAnswers ? userAnswers[number] : undefined}
     callback={checkAnswer}
-    /> */}
 
+    />
+
+    )}
+
+    {!loading || !gameOver || (
     <button className='next' onClick={nextQuestion}>
       Next Question
     </button>
+    )}
 
     </div>
   );
