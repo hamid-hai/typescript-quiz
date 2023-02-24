@@ -107,7 +107,7 @@ function App() {
 
     )}
 
-    {!loading || !gameOver || (
+    {!loading && !gameOver && (
     <button className='next' onClick={nextQuestion}>
       Next Question
     </button>
